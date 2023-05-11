@@ -1,0 +1,42 @@
+<!-- risk calculator -->
+
+
+<!-- ion-card with these items: domain, subdomain, risk, notes, submit button -->
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Risk Calculator</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Domain</ion-label>
+      <ion-input [(ngModel)]="domain" (click)="formValid=true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Subdomain</ion-label>
+      <ion-input (click)="formValid=true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Risk</ion-label>
+      <ion-input [(ngModel)]="risk" (click)="formValid=true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Notes</ion-label>
+      <ion-input (click)="formValid=true"></ion-input>
+    </ion-item>
+    <ion-button expand="block" [disabled]="!formValid || showGraph" (click)="createChart()">Submit</ion-button>
+  </ion-card-content>
+</ion-card>
+
+<!-- ion-card with circle diagram containing the risk score -->
+<ion-card>
+  <ion-card-header>
+    <ion-card-title *ngIf="!showGraph">Risk Score: </ion-card-title>
+    <ion-card-title *ngIf="showGraph">Risk Score for: {{domain}} </ion-card-title>
+    <ion-card-subtitle *ngIf="!showGraph">Enter form to see results</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <div [hidden]="!showGraph">
+      <canvas id="canvas"></canvas>
+    </div>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,29 @@
+<!-- ion card with form for, name adres, contact info, quota, notes, submit button -->
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Formulier</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Naam</ion-label>
+      <ion-input (ionChange)="formValid=true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Adres</ion-label>
+      <ion-input (ionChange)="formValid=true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contact info</ion-label>
+      <ion-input (ionChange)="formValid=true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Quota</ion-label>
+      <ion-input (ionChange)="formValid=true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent" [config]="editorConfig" (ionChange)="formValid=true"></angular-editor>
+    </ion-item>
+    <ion-button expand="block" [disabled]="!formValid">Submit</ion-button>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,7 @@
+{
+  "name": "risico-calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

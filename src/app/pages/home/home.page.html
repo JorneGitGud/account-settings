@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+    <ion-button slot="end">logout</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<div class="container flex-row">
+  <div class="element">
+    <div *ngIf="applicationType===0">
+      <app-risk-calculator></app-risk-calculator>
+    </div>
+    <div *ngIf="applicationType===1">
+      <app-form-creator></app-form-creator>
+    </div>
+    <div *ngIf="applicationType===2">
+      <app-account-manager></app-account-manager>
+    </div>
+  </div>
+</div>

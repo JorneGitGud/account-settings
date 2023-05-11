@@ -1,0 +1,38 @@
+<ion-card>
+  <ion-card-header>
+    <div style="display: flex; flex: row; min-width: 100%; justify-content: center;">
+      <ion-avatar>
+        <ion-img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50">
+        </ion-img>
+      </ion-avatar>
+    </div>
+    <ion-card-title>Account settings</ion-card-title>
+    <ion-card-subtitle>Verander hier de setting van deze account.</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Naam</ion-label>
+        <ion-input (click)="changesMade = true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Rol</ion-label>
+        <ion-select (click)="changesMade = true">
+          <ion-select-option value="1">Admin</ion-select-option>
+          <ion-select-option value="2">User</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Actieve account</ion-label>
+        <ion-toggle (click)="changesMade = true"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Notities</ion-label>
+        <ion-input (click)="changesMade = true"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <ion-button expand="block" [disabled]="!changesMade">Save</ion-button>
+
+  </ion-card-content>
+</ion-card>
